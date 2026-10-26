@@ -1,0 +1,9 @@
+name: Validate
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required files
+        run: test -f index.html && test -f style.css && test -f script.js
